@@ -1,0 +1,55 @@
+2026-11-10 20:59:55.670 [info] [Extension Host] Extension host with pid 10275 started
+2026-11-10 20:59:55.760 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-11-10 20:59:55.820 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-11-10 20:59:56.060 [info] [Extension Host] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onChatSession:copilotcli'
+2026-11-10 20:59:57.839 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-11-10 20:59:57.844 [info] [Extension Host] ExtensionService#_doActivateExtension christian-kohler.path-intellisense, startup: true, activationEvent: '*'
+2026-11-10 20:59:58.549 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-11-10 20:59:58.820 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-11-10 20:59:58.891 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-11-10 20:59:59.045 [info] [Extension Host] Eager extensions activated
+2026-11-10 20:59:59.045 [info] [Extension Host] [node-compile-cache] extension-host: packaged cache enabled (status: enabled, configured: /usr/share/code/resources/app/node-compile-cache/extension-host, active: /usr/share/code/resources/app/node-compile-cache/extension-host/v24.22.1-x64-60e4fe36)
+2026-11-10 20:59:59.141 [info] [Extension Host] ExtensionService#_doActivateExtension TypeScriptTeam.jsts-chat-features, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.178 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.181 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.207 [info] [Extension Host] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.261 [info] [Extension Host] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.273 [info] [Extension Host] ExtensionService#_doActivateExtension monokai.theme-monokai-pro-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.276 [info] [Extension Host] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.296 [info] [Extension Host] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.303 [info] [Extension Host] ExtensionService#_doActivateExtension rvest.vs-code-prettier-eslint, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 20:59:59.311 [info] [Extension Host] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:14.040 [info] [Extension Host] Extension host terminating: received terminate message from renderer
+2026-11-10 21:00:14.074 [info] [Extension Host] Extension host with pid 10275 exiting with code 0
+2026-11-10 21:00:16.220 [info] [Extension Host] Extension host with pid 10517 started
+2026-11-10 21:00:16.220 [info] [Extension Host] Skipping acquiring lock for /home/dcode13/.config/Code/User/workspaceStorage/17b978dc0243e630c52bdc9d524d748b.
+2026-11-10 21:00:16.913 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-11-10 21:00:16.960 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-11-10 21:00:16.985 [info] [Extension Host] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onChatSession:copilotcli'
+2026-11-10 21:00:18.634 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-11-10 21:00:18.638 [info] [Extension Host] ExtensionService#_doActivateExtension christian-kohler.path-intellisense, startup: true, activationEvent: '*'
+2026-11-10 21:00:18.729 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-11-10 21:00:18.898 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-11-10 21:00:18.967 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-11-10 21:00:19.655 [info] [Extension Host] Eager extensions activated
+2026-11-10 21:00:19.655 [info] [Extension Host] [node-compile-cache] extension-host: packaged cache enabled (status: enabled, configured: /usr/share/code/resources/app/node-compile-cache/extension-host, active: /usr/share/code/resources/app/node-compile-cache/extension-host/v24.22.1-x64-60e4fe36)
+2026-11-10 21:00:19.743 [info] [Extension Host] ExtensionService#_doActivateExtension TypeScriptTeam.jsts-chat-features, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.778 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.781 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.806 [info] [Extension Host] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.863 [info] [Extension Host] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.876 [info] [Extension Host] ExtensionService#_doActivateExtension monokai.theme-monokai-pro-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.880 [info] [Extension Host] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.899 [info] [Extension Host] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.906 [info] [Extension Host] ExtensionService#_doActivateExtension rvest.vs-code-prettier-eslint, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:00:19.915 [info] [Extension Host] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:16:57.438 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2026-11-10 21:19:10.337 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:javascript'
+2026-11-10 21:20:00.611 [info] [Extension Host] ExtensionService#_doActivateExtension openai.chatgpt, startup: false, activationEvent: 'onStartupFinished'
+2026-11-10 21:20:00.968 [info] [Extension Host] ExtensionService#_doActivateExtension openai.codex-audio, startup: false, activationEvent: 'onCommand:_codex.microphone.available'
+2026-11-10 21:20:01.030 [info] [Codex] Activating Codex extension
+2026-11-10 21:20:01.030 [info] [Codex] [CodexMcpConnection] Spawning codex app-server
+2026-11-10 21:20:01.030 [info] [Codex] [IpcRouter] I am the router
+2026-11-10 21:20:01.030 [warning] [Codex] [IpcClient] Received broadcast but no handler is configured method=client-status-changed
+2026-11-10 21:20:01.159 [info] [Codex] [CodexMcpConnection] Initialize received id=1
+2026-11-10 21:20:42.483 [error] [Codex] [CodexWebviewProvider] Webview renderer did not become ready elapsedMs=30001 extensionVersion=26.1021.22027 reason=renderer_ready_timeout receivedWebviewMessage=false role=sidebar stage=renderer timeoutMs=30000

@@ -1,0 +1,25 @@
+/* Custom CSS Styles for GorontaloMarket */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbar for horizontal category filter */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Smooth transitions */
+button, a, input {
+    transition: all 0.2s ease-in-out;
+}
+
+.favorite-toggle[aria-pressed="true"] {
+    color: #b91c1c;
+    background-color: #fff1f2;
+}

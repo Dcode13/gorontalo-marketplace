@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GorontaloMarket - Marketplace Produk Lokal Gorontalo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#166534',
+                        secondary: '#ca8a04',
+                        accent: '#b91c1c'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-primary text-white text-xs py-2 px-4 text-center font-medium">
+        ✨ Bangga Produk Lokal Gorontalo! Dukung UMKM Hulonthalo dengan Belanja Asli Daerah. 🚀
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-black text-2xl shadow-md">
+                        GM
+                    </div>
+                    <div>
+                        <a href="#" class="text-xl font-bold tracking-tight text-slate-900 block">Gorontalo<span class="text-secondary">Market</span></a>
+                        <span class="text-xs text-slate-500 font-medium block">Pasar Digital UMKM Hulonthalo</span>
+                    </div>
+                </div>
+
+                <!-- Search Bar Desktop -->
+                <div class="hidden md:flex flex-1 max-w-xl mx-8">
+                    <div class="relative w-full">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" id="searchInput" placeholder="Cari Kopi, Panada Tore, Keripik Pisang..." 
+                            class="w-full pl-11 pr-4 py-2.5 bg-slate-100 border border-transparent rounded-full text-sm focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                    </div>
+                </div>
+
+                <!-- Action Nav -->
+                <div class="flex items-center space-x-1 sm:space-x-4">
+                    <!-- Wishlist -->
+                    <button id="favoritesBtn" type="button" aria-label="Lihat produk favorit" aria-pressed="false" aria-controls="productSection" title="Produk favorit" class="favorite-toggle relative p-2.5 text-slate-600 hover:text-accent transition rounded-full hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-accent">
+                        <i class="fa-regular fa-heart text-xl" aria-hidden="true"></i>
+                        <span id="favoritesCount" aria-hidden="true" class="hidden absolute top-1 right-1 bg-accent text-white text-[10px] min-w-4 h-4 px-1 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+
+                    <!-- Cart -->
+                    <button id="cartBtn" class="relative p-2.5 text-slate-600 hover:text-primary transition rounded-full hover:bg-slate-100">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span id="cartCount" class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+
+                    <div class="h-6 w-px bg-slate-200 hidden sm:block"></div>
+
+                    <!-- Open Store Button -->
+                    <button id="openStoreBtn" class="hidden sm:inline-flex items-center space-x-2 bg-secondary hover:bg-yellow-600 text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-sm transition">
+                        <i class="fa-solid fa-store"></i>
+                        <span>Buka Toko UMKM</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-primary to-emerald-800 text-white overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="bg-secondary/30 text-yellow-300 border border-yellow-400/30 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-4">
+                    Pusat Oleh-Oleh & Produk Kreatif Gorontalo
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-6">
+                    Belanja Asli Produk <span class="text-yellow-400">Gorontalo</span> Dalam Genggaman
+                </h1>
+                <p class="text-emerald-100 text-base sm:text-lg mb-8 leading-relaxed">
+                    Temukan kenikmatan kopi lokal, kuliner khas, camilan, dan minuman dari UMKM di 6 Kabupaten/Kota se-Provinsi Gorontalo.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#productSection" class="bg-white text-primary hover:bg-slate-100 font-bold px-6 py-3 rounded-xl shadow-lg transition">
+                        Mulai Belanja Sekarang
+                    </a>
+                    <button id="heroOpenStore" class="border-2 border-white/80 hover:bg-white/10 font-bold px-6 py-3 rounded-xl transition">
+                        Daftarkan UMKM Anda
+                    </button>
+                </div>
+            </div>
+            <div class="relative hidden md:block">
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 shadow-2xl">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white text-slate-800 p-4 rounded-2xl shadow">
+                            <div class="text-primary text-2xl font-black mb-1">10+</div>
+                            <div class="text-xs text-slate-500 font-medium">UMKM Terdaftar</div>
+                        </div>
+                        <div class="bg-white text-slate-800 p-4 rounded-2xl shadow">
+                            <div class="text-secondary text-2xl font-black mb-1">6</div>
+                            <div class="text-xs text-slate-500 font-medium">Kabupaten / Kota</div>
+                        </div>
+                        <div class="bg-white text-slate-800 p-4 rounded-2xl shadow">
+                            <div class="text-emerald-600 text-2xl font-black mb-1">100%</div>
+                            <div class="text-xs text-slate-500 font-medium">Karya Lokal Asli</div>
+                        </div>
+                        <div class="bg-white text-slate-800 p-4 rounded-2xl shadow">
+                            <div class="text-accent text-2xl font-black mb-1">24/7</div>
+                            <div class="text-xs text-slate-500 font-medium">Dukungan Pengiriman</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="productSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-24">
+        <!-- Filter & Region Bar -->
+        <div class="mb-8 space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 id="catalogTitle" class="text-2xl font-bold text-slate-900">Katalog Produk UMKM</h2>
+                    <p id="catalogDescription" class="text-sm text-slate-500">Pilih wilayah atau kategori produk yang ingin Anda temukan</p>
+                    <button id="showAllProductsBtn" type="button" class="hidden mt-3 text-sm font-bold text-primary hover:underline">Lihat semua produk</button>
+                </div>
+                <!-- Region Filter Buttons -->
+                <div id="regionFilters" class="flex flex-wrap gap-2">
+                    <button data-region="all" class="region-btn active px-4 py-2 rounded-full text-xs font-semibold bg-primary text-white shadow-sm transition">Semua Wilayah</button>
+                    <button data-region="Gorontalo" class="region-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Gorontalo (Umum)</button>
+                    <button data-region="Kota Gorontalo" class="region-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Kota Gorontalo</button>
+                    <button data-region="Bone Bolango" class="region-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Bone Bolango</button>
+                    <button data-region="Kab. Gorontalo" class="region-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Kab. Gorontalo</button>
+                    <button data-region="Gorontalo Utara" class="region-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Gorontalo Utara</button>
+                    <button data-region="Boalemo" class="region-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Boalemo</button>
+                    <button data-region="Pohuwato" class="region-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition">Pohuwato</button>
+                </div>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div id="categoryFilters" class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none">
+                <button data-category="all" class="cat-btn active flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium bg-primary text-white whitespace-nowrap shadow-sm">
+                    <span>Semua Kategori</span>
+                </button>
+                <button data-category="Milk Shake" class="cat-btn flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 whitespace-nowrap">
+                    <span>🧋 Milk Shake</span>
+                </button>
+                <button data-category="Kuliner" class="cat-btn flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 whitespace-nowrap">
+                    <span>🍢 Kuliner Khas</span>
+                </button>
+                <button data-category="Kopi" class="cat-btn flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 whitespace-nowrap">
+                    <span>☕ Kopi </span>
+                </button>
+                <button data-category="Camilan" class="cat-btn flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 whitespace-nowrap">
+                    <span>🍌 Camilan</span>
+                </button>
+                <button data-category="Minuman" class="cat-btn flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 whitespace-nowrap">
+                    <span>🍵 Minuman</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Products will be rendered dynamically via JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-16">
+            <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto text-slate-400 text-3xl mb-4">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
+            <h3 id="emptyStateTitle" class="text-lg font-bold text-slate-800 mb-1">Produk Tidak Ditemukan</h3>
+            <p id="emptyStateDescription" class="text-sm text-slate-500">Coba kata kunci lain atau ubah filter wilayah / kategori Anda.</p>
+        </div>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div id="cartBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <!-- Cart Header -->
+                <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid fa-cart-shopping text-primary text-xl"></i>
+                        <h3 class="font-bold text-lg text-slate-900">Keranjang Belanja</h3>
+                    </div>
+                    <button id="closeCartBtn" class="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 transition">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items List -->
+                <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-slate-100">
+                    <!-- Dynamic Cart Items -->
+                </div>
+
+                <!-- Cart Footer -->
+                <div class="p-6 border-t border-slate-100 bg-slate-50 space-y-4">
+                    <!-- Coupon Input -->
+                    <div class="flex space-x-2">
+                        <input type="text" id="couponInput" placeholder="Kode Kupon (Coba: HULONTHALO10)" class="flex-1 px-4 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-primary">
+                        <button id="applyCouponBtn" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">Gunakan</button>
+                    </div>
+                    <div id="couponMessage" class="text-xs font-medium"></div>
+
+                    <div class="space-y-1.5 text-sm">
+                        <div class="flex justify-between text-slate-500">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal" class="font-semibold text-slate-800">Rp 0</span>
+                        </div>
+                        <div class="flex justify-between text-slate-500">
+                            <span>Diskon Kupon</span>
+                            <span id="cartDiscount" class="font-semibold text-emerald-600">- Rp 0</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold text-slate-900 pt-2 border-t border-slate-200">
+                            <span>Total Pembayaran</span>
+                            <span id="cartTotal" class="text-primary">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <button id="checkoutBtn" class="w-full bg-primary hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center space-x-2">
+                        <span>Lanjut ke Pembayaran</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4 sm:p-6">
+        <div id="modalBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+        <div class="relative bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl z-10 grid grid-cols-1 md:grid-cols-2">
+            <button id="closeModalBtn" class="absolute top-4 right-4 z-20 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center text-slate-700 shadow transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="h-64 md:h-full bg-slate-100 relative">
+                <img id="modalImg" src="" alt="Product Image" class="w-full h-full object-cover">
+                <span id="modalCategoryBadge" class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow"></span>
+                <button id="modalFavoriteBtn" type="button" aria-pressed="false" class="favorite-toggle absolute bottom-4 right-4 bg-white text-slate-600 rounded-full px-4 py-2.5 text-xs font-bold shadow flex items-center gap-2 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent">
+                    <i class="fa-regular fa-heart text-lg" aria-hidden="true"></i><span>Simpan ke Favorit</span>
+                </button>
+            </div>
+            <div class="p-6 sm:p-8 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 text-xs text-slate-500 font-medium">
+                        <i class="fa-solid fa-location-dot text-accent"></i>
+                        <span id="modalLocation"></span>
+                    </div>
+                    <h2 id="modalTitle" class="text-2xl font-black text-slate-900"></h2>
+                    <div id="modalPrice" class="text-2xl font-bold text-primary"></div>
+                    <p id="modalDescription" class="text-sm text-slate-600 leading-relaxed"></p>
+                    
+                    <div class="pt-4 border-t border-slate-100 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-700" id="modalSellerInitial">UM</div>
+                        <div>
+                            <div id="modalSeller" class="text-xs font-bold text-slate-800"></div>
+                            <div class="text-[10px] text-emerald-600 font-semibold flex items-center space-x-1">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>UMKM Terverifikasi Gorontalo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 space-y-3">
+                    <button id="modalAddToCart" class="w-full bg-primary hover:bg-emerald-800 text-white font-bold py-3 rounded-xl shadow transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Tambah ke Keranjang</span>
+                    </button>
+                    <button id="modalChatSeller" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 rounded-xl transition flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                        <span>Chat Penjual UMKM</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Open Store Modal -->
+    <div id="storeModal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+        <div id="storeBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+        <div class="relative bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl z-10">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Daftar Toko UMKM Gorontalo</h3>
+                    <p class="text-xs text-slate-500">Kembangkan produk lokal Anda ke seluruh penjuru nusantara!</p>
+                </div>
+                <button id="closeStoreModalBtn" class="text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100 transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <form id="storeForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pemilik / UMKM</label>
+                    <input type="text" required placeholder="Contoh: Ibu Siti Karawo" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-primary outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Usaha / Brand</label>
+                    <input type="text" required placeholder="Contoh: Karawo Indah Limboto" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-primary outline-none">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Kabupaten / Kota</label>
+                        <select class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-primary outline-none">
+                            <option>Kota Gorontalo</option>
+                            <option>Kab. Gorontalo</option>
+                            <option>Bone Bolango</option>
+                            <option>Gorontalo Utara</option>
+                            <option>Boalemo</option>
+                            <option>Pohuwato</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Kategori Utama</label>
+                        <select class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-primary outline-none">
+                            <option>Fashion Karawo</option>
+                            <option>Kuliner Khas</option>
+                            <option>Kopi Pinogu </option>
+                            <option>Kerajinan Tangan</option>
+                            <option>Hasil Tani & Rempah</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Bisnis</label>
+                    
+                    <input type="tel" required placeholder="081234567890" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:border-primary outline-none">
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition mt-4">
+                    Daftar & Mulai Jualan Sekarang
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-16 pb-12 mt-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-black text-xl">GM</div>
+                        <span class="text-lg font-bold">GorontaloMarket</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Platform e-commerce resmi yang berdedikasi untuk memajukan perekonomian digital UMKM di seluruh wilayah Provinsi Gorontalo (Hulonthalo).
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-yellow-400">Wilayah UMKM</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Kota Gorontalo</a></li>
+                        <li><a href="#" class="hover:text-white transition">Kabupaten Gorontalo</a></li>
+                        <li><a href="#" class="hover:text-white transition">Bone Bolango</a></li>
+                        <li><a href="#" class="hover:text-white transition">Gorontalo Utara</a></li>
+                        <li><a href="#" class="hover:text-white transition">Boalemo & Pohuwato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-yellow-400">Kategori Unggulan</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Camilan Khas Gorontalo</a></li>
+                        <li><a href="#" class="hover:text-white transition">Kopi Robusta</a></li>
+                        <li><a href="#" class="hover:text-white transition">Panada Tore</a></li>
+                        <li><a href="#" class="hover:text-white transition">Keripik Pisang Keju</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-yellow-400">Dukungan & Kolaborasi</h4>
+                    <p class="text-xs text-slate-400 mb-4">Bekerja sama dengan Dinas Koperasi, UMKM, Perindag Provinsi Gorontalo & Komunitas Kreatif Lokal.</p>
+                    <div class="flex space-x-3 text-slate-400">
+                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-800 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                &copy; 2026 GorontaloMarket (Pasar Hulonthalo). Seluruh Hak Cipta Dilindungi. Dibuat oleh Bisnis Digital untuk UMKM Gorontalo.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <div id="favoriteStatus" role="status" aria-live="polite" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-max max-w-[calc(100%-2rem)] bg-slate-900 text-white text-xs font-semibold px-4 py-3 rounded-xl shadow-lg z-[60]"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
